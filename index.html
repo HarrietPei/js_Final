@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实验楼</title>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.container{
+		width: 1170px;
+		margin: 0 auto;
+		padding: 0 15px;	
+	}
+	a{
+		text-decoration: none;
+	}
+	li{
+		list-style: none;
+	}
+	.nav{
+		background-color: #191e29;
+		height: 50px;
+	}
+	.logo{
+		float: left;
+		line-height: 50px;
+		height: 50px;
+		display: inline-block;
+	}
+	.navbar-nav{
+		float: left;
+		margin: 0;
+	}
+	.navbar-nav>li{
+		float: left;
+		font-size: 16px;
+		text-align: center;
+		width: 78px;
+		line-height: 50px;
+	}
+	.navbar-nav>li>a{
+		color:white;
+	}
+	.navbar-nav>li:hover{
+		background-color: #999;
+	}
+	.navbar-search{
+		width: 182px;
+		padding: 0 15px;
+		margin: 8px 0;
+		margin-left: 300px;
+		display: inline-block;
+		position: relative;
+	}
+	.search{
+		height: 34px;
+		width: 182px;
+		line-height: 34px;
+		display: inline-block;
+		padding: 6px 12px;
+		font-size: 14px;
+		color: #555;
+		border: 1px solid #ccc;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	}
+	.navbar-buttons{
+		float: right;
+		width: 111px;
+		height: 50px;
+		margin: 8px 0;
+	}
+	.signin{
+		color: #777;
+		background-color: #191e29;
+		border: 1px solid #777;
+		border-radius: 4px;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+		cursor: pointer;
+		padding: 6px 12px;
+		font-size: 14px;
+	}
+	.signup{
+		color: #fff;
+		background-color: #11aa8c;
+		border: 1px solid #11aa8c;
+		border-radius: 4px;
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+		padding: 6px 12px;
+		font-size: 14px;
+		float: right;
+	}
+	.banner{
+		background: url('img/banner.png');
+		height: 612px;
+		background-size: cover;
+	}
+	.banner-container{
+		height: 472px;
+		padding-top: 140px;
+		min-height: 612px;
+	}
+	.row-left{
+		width: 652px;
+		height: 230px;
+		padding: 0 15px;
+		display: inline-block;
+	}
+    .course-btn{
+    	margin-top: 30px;
+    	width: 652px;
+    	height: 82px;
+    }
+    .course{
+    	color: #fff;
+    	background-color: #11aa8c;
+    	margin-bottom: 30px;
+    	font-size: 20px;
+    	border-radius: 4px;
+    	box-shadow: 0 1px 10px rgba(0,0,0,.43);
+    	padding: 12px 36px;
+    	text-align: center;
+    	vertical-align: middle;
+    	border: 1px solid #11aa8c;
+    }
+    .row-right{
+    	width: 457px;
+    	height: 265px;
+    	padding: 0 15px;
+    	display: inline-block;
+    	float: right;
+    }
+    .form-group{
+    	width: 457px;
+    	height: 34px;
+    	/* margin-bottom: 24px; */
+    }
+    .name{
+    	display: block;
+    	height: 20px;
+    	line-height: 20px;
+    	padding: 6px 12px;
+    	font-size: 14px;
+    	color: #555;
+    	border: 1px solid #ccc;
+    	border-radius: 5px;
+    	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    	margin-left: 46px;
+    	width: 340px;
+    }
+    .email{
+    	display: block;
+    	height: 20px;
+    	line-height: 20px;
+    	padding: 6px 12px;
+    	font-size: 14px;
+    	color: #555;
+    	border: 1px solid #ccc;
+    	border-radius: 5px;
+    	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    	margin-left: 46px;
+    	width: 340px;
+    }
+   .password{
+    	display: block;
+    	height: 20px;
+    	line-height: 20px;
+    	padding: 6px 12px;
+    	font-size: 14px;
+    	color: #555;
+    	border: 1px solid #ccc;
+    	border-radius: 5px;
+    	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    	margin-left: 46px;
+    	width: 340px;
+    }
+    .register-btn{
+    	width: 366px;
+    	height: 52px;
+    	padding: 6px 12px;
+    	color: #fff;
+    	font-size: 20px;
+    	text-align: center;
+    	margin-top: 8px;
+    	border-radius: 5px;
+    	background: #11aa8c;
+    	margin-left: 45px;
+    }
+    button{
+    	border: 1px solid #11aa8c
+    }
+    .introduce-container{
+    	height: 282px;
+    }
+    .introduce-unit{
+    	padding: 35px;
+    	text-align: center;
+    	width: 222px;
+    	display: inline-block;
+    	float: left;
+    	color: #6a849d;
+    }
+    .item-header{
+    	height: 42px;
+    	margin-left: 360px;
+    	margin-bottom: 64px;
+    }
+    .line{
+    	width: 12%;
+    	display: inline-block;
+    	border-top: 1px solid #777;
+    	margin-bottom: 10px;
+    	text-align: center; 
+    }
+    .item-title{
+    	width: 200px;
+    	display: inline-block;
+    	color: #777;
+    	font-size: 30px;
+    	text-align: center;
+    }
+    .lab{
+    	height: 630px;
+    	margin-bottom: 50px;
+    }
+    .Go{
+    	background: url('img/Go.png');
+    	width: 262px;
+    	height: 520px;
+    	display: inline-block;
+    	float: left;
+    	margin-right: 15px;
+    }
+    .content-img{
+    	float: left;
+    	margin-bottom: 14px;
+    	padding-left: 14px;
+    	padding-right: 14px;
+    }
+    .item-box{
+    	height: 100px;
+    	bottom: 0px;
+    	position: relative;
+    	border: 1px solid #999;
+    	border-top: 0px;
+    }
+    .course-description{
+    	color: #666;
+    	font-size: 16px;
+    	line-height: 1.4;
+    	width: 262px;
+    	height: 100px;
+    	text-align: center;
+    }
+    .course-bottom{
+		margin: 10px 0;
+		padding-right: 35px;
+		display: inline-block;
+		float: left;
+    }
+    .course-img{
+    	width: 255px;
+    	border: 1px solid #999;
+    	border-bottom: 0px;
+    }
+    .smaller{
+    	width:100%;
+    }
+    .course-body{
+    	padding: 5% 5% 0;
+    	font-size: 14px;
+    	text-align: center;
+    	width: 229.5px;
+    	border: 1px solid #999;
+    	border-top: 0px;
+    }
+    .course-body:hover{
+    	color: #999;
+    }
+    .lab-2{
+    	height: 472px;
+    }
+    .courses{
+    	height: 242px;
+    }
+    .footer{
+    	padding-top: 20px;
+    	height: 220px;
+    	background: #191e29;
+    }
+    .footer-row{
+    	height: 150px;
+    }
+    .footer-left{
+    	width: 360px;
+    	height: 150px;
+    	padding: 0 15px;
+    	display: inline-block;
+    }
+    .footer-content{
+    	width: 165px;
+    	height: 150px;
+    	padding: 0 15px; 
+    	display: inline-block;   	
+    }
+    .footer-slogan{
+    	width: 345px;
+    	margin-left: 15px;
+    	margin-bottom: 12px;
+    	margin-top: 40px;
+    	height: 28px;
+    	color: #0c9;
+    	font-size: 20px;
+    }
+    .content-title{
+    	font-size: 14px;
+    	margin-bottom: 10px;
+    	color: hsla(0,0%,100%,.5);
+    	width: 165px;
+    	height: 20px;
+    }
+    .footer-content a{
+    	display: inline-block;
+    	margin-bottom: 3px;
+    	color: hsla(0,0%,100%,.5);
+    	height: 17px;
+    	font-size: 12px;
+    }
+    br{
+    	height: 16px;
+    }
+    .footer-right{
+    	float: right;
+    	padding-left: 0px;
+    }
+	.right-title{
+		margin-top: 6px;
+	}
+	.patent{
+		margin-top: 20px;
+		height: 50px;
+		background-color: #171918;
+		text-align: center;
+		line-height: 50px;
+	}
+	.patent span{
+		color: #777;
+	}
+	.patent a{
+		color: #777;
+	}
+	.tip{
+		height: 25px;
+		width: 340px;
+		font-size: 10px;
+		color: white;
+		text-align: center;
+	}
+	.modal{
+		width: 350px;
+		height: 300px;
+		border: 1px solid white;
+		position:absolute;
+		display:none;
+		z-index:2;
+		background-color: white;
+	}
+	.modal1{
+		width: 350px;
+		height: 300px;
+		border: 1px solid white;
+		position:absolute;
+		display:none;
+		z-index:2;
+		background-color: white;
+	}
+	.closemodal{
+		width: 20px;
+		height: 20px;
+		float: right;
+		border: 0;
+	}
+	.closemodal1{
+		width: 20px;
+		height: 20px;
+		float: right;
+		border: 0;
+	}
+	.form-control{
+		display: block;
+    	height: 20px;
+    	line-height: 20px;
+    	padding: 6px 12px;
+    	font-size: 14px;
+    	color: #555;
+    	border: 1px solid #ccc;
+    	border-radius: 5px;
+    	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    	margin-left: 46px;
+    	width: 240px;
+    	margin-bottom: 20px;
+    	margin-top: 30px;
+	}
+	   .register-btn1{
+    	width: 250px;
+    	height: 40px;
+    	padding: 6px 12px;
+    	color: #fff;
+    	font-size: 20px;
+    	text-align: center;
+    	margin-top: 8px;
+    	border-radius: 5px;
+    	background: #11aa8c;
+    	margin-left: 45px;
+    }
+    .toTop{
+    	width: 48px;
+    	height: 35px;
+    	float: right;
+    	background-color: white;
+    	color: white;
+    	font-size: 6px;
+    	position: relative;
+    }
+    .pageScroll{
+    	display: inline-block;
+    }
+    .forgetWord{
+    	color: grey;
+    	font-size: 10px;
+    	float: right;
+    }
+    .modal-body{
+    	width: 300px;
+    	height: auto;
+    }
+    .autoLog{
+    	font-size: 10px;
+    	margin-left: 46px;
+    }
+    .denglu,
+    .zhuce,
+    .denglu1{
+    	width: 50px;
+    	height: 40px;
+    	font-size: 20px;
+    	font-weight: bold;
+    	border: 0;
+    	background-color: white;
+    	margin-right: 5px;
+    }
+
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<div class="container">
+			<a href="#" class="logo">
+				<img src="img/logo.png">
+			</a>
+			<ul class="navbar-nav">
+				<li><a href="#">课程</a></li>
+				<li><a href="#">路径</a></li>
+				<li><a href="#">讨论区</a></li>
+				<li><a href="#">训练营</a></li>
+				<li><a href="#">会员</a></li>
+			</ul>
+			<div class="navbar-search">
+				<input type="search" name="search" class="search" placeholder="搜索 课程/问答">
+			</div>
+			<div class="navbar-buttons">
+				<a href="#" class="signin">登录</a>
+				<a href="#" class="signup">注册</a>
+			</div>
+		</div>
+	</div>
+	<div class="modal"  style="opacity: 0.9">
+		<input type="button" class="denglu" value="登录">
+		<input type="button" class="zhuce" value="注册"> 
+		<button class="closemodal" aria-label="Close">X</button>
+		<hr>
+		<div class="modal-body">
+			<input type="email" name="login" class="form-control" placeholder="请输入邮箱">
+			<input type="password" name="password" class="form-control" placeholder="请输入密码">
+			<input type="checkbox" name="log" class="autoLog">下次自动登录
+			<a class="forgetWord" href="#">忘记密码？</a>
+			<button class="register-btn1" type="submit">加入实验楼</button>
+		</div>
+	</div>
+
+	<div class="modal1" style="opacity: 0.9">
+		<input type="button" class="denglu1" value="登录">
+		<input type="button" class="zhuce" value="注册"> 
+		<button class="closemodal1" aria-label="Close">X</button>
+		<hr>
+		<div class="modal-body">
+			<input type="email" name="login" class="form-control" placeholder="请输入邮箱">
+			<input type="password" name="password" class="form-control" placeholder="请输入密码">
+			<button class="register-btn1" type="submit">注册</button>
+		</div>
+	</div>
+
+	<div class="banner">
+		<div class="banner-container">
+			<div class="container">
+				<div class="row">
+					<div class="row-left">
+						<a class="container-title">
+							<img src="img/container-title-2.png">
+						</a>
+						<div class="course-btn"> 
+							<a href="#" class="course">进入课程</a>
+						</div>
+					</div>
+					<div class="row-right">
+						<form method="post">
+							<div class="form-group">
+								<input type="text" name="name" placeholder="请输入昵称" class="name" id="name">
+							</div>
+							<p class="tip"></p>
+							<div class="form-group">
+								<input type="text" name="email" placeholder="请输入邮箱" class="email" id="email">
+							</div>
+							<p class="tip"></p>
+							<div class="form-group">
+								<input type="text" name="password" placeholder="请输入密码" class="password" id="password">
+							</div>
+							<p class="tip"></p>
+							<button class="register-btn" type="submit">
+								加入实验楼
+							</button>
+						</form> 
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="introduce-container">
+		<div class="container">
+			<div class="row">
+				<div class="introduce-unit">
+					<div>
+						<img src="img/introduceContainer1.gif">
+					</div>
+					<div>
+						<span>
+							丰富全面的计算机实验课程
+				        </span>
+				    </div>
+				</div>
+				<div class="introduce-unit">
+					<div>
+						<img src="img/introduceContainer2.gif">
+					</div>
+					<div>
+						<span>
+							在线编程环境，1秒启动
+						</span>
+					</div>
+				</div>
+				<div class="introduce-unit">
+					<div>
+						<img src="img/introduceContainer3.gif">
+					</div>
+					<div>
+						<span>
+						每天一个项目课，丰富你的项目经验
+					    </span>
+					</div>
+				</div>
+				<div class="introduce-unit">
+					<div>
+						<img src="img/introduceContainer4.gif">
+					</div>
+					<div>
+						<span>
+						有效学习时间，真实记录你的代码生涯
+					    </span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="lab">
+		<div class="container">
+			<div class="item-header">
+				<span class="line"></span>
+				<span class="item-title">后端开发</span>
+				<span class="line"></span>
+			</div>
+			<div class="item-content">
+				<div class="Go">
+				</div>
+				<div class="content-img">
+					<img src="img/flask.png">
+					<div class="item-box">
+                   		<div class="course-description">
+             				本课程主要使用 Flask完成问答社区项目，适合对 Web 开发有一定基础，想进一步加强理解与运用的同学。
+            			</div>	
+					</div>
+				</div>
+				<div class="content-img">
+					<img src="img/docker.png">
+					<div class="item-box">
+						<div class="course-description">
+              				本项目将 C++ 与 Linux 的 Namespace 及 Control Group 技术相结合，实现一个简易 Docker 容器。
+            			</div>
+					</div>
+				</div>
+				<div class="content-img">
+					<img src="img/stl.jpg">
+					<div class="item-box">
+						<div class="course-description">
+              				本课程主要讲解了C++ STL的容器和算法的实现，通过本课程可以快速掌握顺序容器vector、list 和deque等，更有迭代器和算法的讲解。
+            			</div>
+					</div>
+				</div>
+				<div class="content-img">
+					<img src="img/spring.png">
+					<div class="item-box">
+						<div class="course-description">
+             				 Spring 提供了 DispatcherServlet 作为前端控制器来分配请求。本次课程，将学习 Spring 策略接口，以及 JSP、Velocity、Tiles 等相关技术。
+            			</div>
+					</div>
+				</div>
+				<div class="content-img">
+					<img src="img/java.png">
+					<div class="item-box">
+						<div class="course-description">
+              				本课程主要讲解如何使用 JUnit 来进行单元测试，会学习到单元测试的基本概念以及 JUnit 的基本功能和操作。
+           				 </div>
+					</div>
+				</div>
+				<div class="content-img">
+					<img src="img/hand.png">
+					<div class="item-box"">
+						<div class="course-description">
+              				本课程包含了最快的上手教程，最新的技术领域，最多的动手实践。你可以在线实验并学习到 Docker，DockerFile，Compose等技术。
+            			</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="lab-2">
+		<div class="container">
+			<div class="item-header">
+				<span class="line">
+				</span>
+				<div class="item-title">实验课程</div>
+				<span class="line"></span>
+			</div>
+			<div class="courses">
+				<div class="course-bottom">
+					<div class="course-img">
+						<img alt="Linux 基础入门（新版）" src="img/ncn1.jpg" class="smaller">
+					</div>
+					<div class="course-body">
+						<span>Linux基础入门（新版）</span>
+					</div>
+				</div>
+				<div class="course-bottom">
+					<div class="course-img">
+						<img alt="Go语言编程入门" src="img/ncn11.jpg" class="smaller">
+					</div>
+					<div class="course-body">
+						<span>Go语言编程入门</span>
+					</div>
+				</div>
+				<div class="course-bottom">
+					<div class="course-img">
+						<img alt="PHP编程语言" src="img/ncn23.jpg" class="smaller">
+					</div>
+					<div class="course-body">
+						<span>PHP编程语言</span>
+					</div>
+				</div>
+				<div class="course-bottom">
+					<div class="course-img">
+						<img alt="Python Django Web框架" src="img/ncn30.jpg" class="smaller">
+					</div>
+					<div class="course-body">
+						<span>Python Django Web框架</span>
+					</div>
+				</div>					
+			</div>
+		</div>
+		<div class="toTop"  onclick="pageScroll()">
+			<img src="img/tup.gif">
+<!--        <a class="pageScroll">返回顶部</a>-->		
+        </div>			
+	</div>
+	<div class="footer">
+		<div class="container">
+			<div class="footer-row">
+				<div class="footer-left">
+					<img src="img/logo.png">
+					<div class="footer-slogan">动手做实验，轻松学编程</div>
+				</div>
+				<div class="footer-content">
+					<div class="content-title">公司</div>
+					<a href="#">关于我们</a>
+					<br>
+					<a href="#">联系我们</a>
+					<br>
+					<a href="#">加入我们</a>
+					<br>
+					<a href="#">技术博客</a>
+					<br>					
+				</div>
+				<div class="footer-content">
+					<div class="content-title">合作</div>
+					<a href="#">我要投稿</a>
+					<br>
+					<a href="#">教师合作</a>
+					<br>
+					<a href="#">高校合作</a>
+					<br>
+					<a href="#">友情链接</a>
+					<br>										
+				</div>
+				<div class="footer-content">
+					<div class="content-title">服务</div>
+					<a href="#">会员服务</a>
+					<br>
+					<a href="#">实验报告</a>
+					<br>
+					<a href="#">常见问题</a>
+					<br>
+					<a href="#">隐私条款</a>
+					<br>					
+				</div>
+				<div class="footer-content footer-right">
+					<div class="content-title right-title">学习路径</div>
+					<a href="#">Python学习路径</a>
+					<br>
+					<a href="#">Linux学习路径</a>
+					<br>
+					<a href="#">大数据学习路径</a>
+					<br>
+					<a href="#">全部</a>
+					<br>					
+				</div>				
+			</div>
+		</div>
+		<div class="patent">
+			<span>Copyright @2013-2016 实验楼在线教育</span>
+			<span> | </span>
+			<a href="#" target="_blank">蜀ICP备13019762号</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var name = document.getElementsByClassName("name");
+		var email = document.getElementsByClassName("email");
+		var password = document.getElementsByClassName("password");
+		var tip = document.getElementsByClassName("tip");
+		var signin = document.getElementsByClassName("signin");
+		var modal = document.getElementsByClassName("modal");
+		var modal1 = document.getElementsByClassName("modal1");
+		var closemodal = document.getElementsByClassName("closemodal");
+		var closemodal1 = document.getElementsByClassName("closemodal1");
+		var denglu = document.getElementsByClassName("denglu");
+		var denglu1 = document.getElementsByClassName("denglu1");
+		var zhuce = document.getElementsByClassName("zhuce");
+		var signup = document.getElementsByClassName("signup");
+		//登录提示：
+		document.getElementsByClassName("name")[0].onblur = function(){
+			if (document.getElementsByClassName("name")[0].value == "") {
+				tip[0].innerHTML = "用户名只能包括中文、字母、数字";
+			}else{
+				tip[0].innerHTML = "";
+			}
+		}
+		document.getElementsByClassName("email")[0].onfocus = function(){
+			tip[0].innerHTML = "";
+		}
+		document.getElementsByClassName("email")[0].onblur = function(){
+			if(document.getElementsByClassName("email")[0].value == ""){
+				tip[1].innerHTML = "请填写正确格式的邮箱!";
+			}else{
+				tip[1].innerHTML = "";
+			}
+		}
+		document.getElementsByClassName("password")[0].onfocus = function(){
+			tip[1].innerHTML = "";
+		}
+		document.getElementsByClassName("password")[0].onblur = function(){
+			if (document.getElementsByClassName("password")[0].value == "") {
+				tip[2].innerHTML = "密码不能为空！";
+			}else{
+				tip[2].innerHTML = "";
+			}
+		}
+		//登录、注册弹窗：
+		signin[0].onclick = function(){
+			fadeIn(modal[0],100);
+			document.getElementsByClassName("modal")[0].style.display = "block";
+		}
+		signup[0].onclick = function(){
+			fadeIn(modal1[0],100);
+			document.getElementsByClassName("modal1")[0].style.display = "block";
+		}
+		closemodal[0].onclick = function(){
+			fadeOut(modal[0],100);
+			document.getElementsByClassName("modal")[0].style.display = "none";
+		}
+		closemodal1[0].onclick = function(){
+			fadeOut(modal1[0],100);
+			document.getElementsByClassName("modal1")[0].style.display = "none";
+		}
+		denglu1[0].onclick = function(){
+			document.getElementsByClassName("modal")[0].style.display = "block";
+			document.getElementsByClassName("modal1")[0].style.display = "none";
+		}
+		zhuce[0].onclick = function(){
+			document.getElementsByClassName("modal")[0].style.display = "none";
+			document.getElementsByClassName("modal1")[0].style.display = "block";
+		}
+		//回到顶部效果
+		function pageScroll(){
+    		window.scrollBy(0,-100);
+    		scrolldelay = setTimeout('pageScroll()',15);
+    		var sTop=document.documentElement.scrollTop + document.body.scrollTop;
+    		if(sTop == 0){
+    			clearTimeout(scrolldelay);
+    		} 
+		}
+		//淡入淡出效果：
+		function fadeIn(element,speed){
+    		if(element.style.opacity != 1){
+        		var speed = speed || 30 ;
+        		var num = 0;
+        		var s = setInterval(function(){
+        			num++;
+        			element.style.opacity = num/10;
+        			if(num>=20)  {
+        			  clearInterval(s);  
+        			}
+        		},speed);
+    		}
+		}
+		function fadeOut(element){
+    		if(element.style.opacity != 0){
+        		var speed = speed || 30 ;
+        		var num = 20;
+        		var s = setInterval(function(){
+       				num--;
+        			element.style.opacity = num / 10 ;
+        			if(num<=0)  {
+        			   clearInterval(s);  
+        			}
+        		},speed);
+    		}
+		}
+	</script>
+</body>
+</html>
